@@ -1,0 +1,110 @@
+[
+    {
+        "id": "1",
+        "name": "Angle Grinder",
+        "shortDescription": "TOLSEN Industrial Angle Grinder 100mm (850W) FX Series 79519",
+        "specification": [
+            "CERTIFIED ORIGINAL TOLSEN BRAND",
+            "Input power: 850W",
+            "Frequency: 50Hz",
+            "No load speed: 12000r/min",
+            "Spindle thread:M10",
+            "Spindle thread:M10",
+            "1pc side handle"
+        ],
+        "img": "https://i.ibb.co/Gt4dXYv/TT-89-1.jpg",
+        "minOrderQuantity": "5",
+        "availabelQuantity": "6",
+        "price": "345"
+    },
+    {
+        "id": "2",
+        "name": "Hammer Drill",
+        "shortDescription": "TOLSEN Hammer Drill 850W 13mm Industrial FX Series 79503",
+        "specification": [
+            "CERTIFIED ORIGINAL TOLSEN BRAND",
+            "Model: 79503",
+            "Power : 850W",
+            "GS approved",
+            "Rated Voltage: 220-240V",
+            "Spindle thread:M10",
+            "Frequency: 50/60Hz"
+        ],
+        "img": "https://i.ibb.co/WKhSG8r/TT-90-1.jpg",
+        "minOrderQuantity": "4",
+        "availabelQuantity": "6",
+        "price": "369"
+    },
+    {
+        "id": "3",
+        "name": "Screwdriver",
+        "shortDescription": "TOLSEN LI-ON Impact Drill/Screwdriver (12V) Soft Grip Handle 79025",
+        "specification": [
+            "CERTIFIED ORIGINAL TOLSEN BRAND",
+            "Model: 79025",
+            "Power: Li-ion, 1x1500mAh",
+            "No-load speed: 0-2400rpm",
+            "Rated Voltage: 220-240V",
+            "Impact rate: 3000ipm",
+            "Max torque: 100Nm"
+        ],
+        "img": "https://i.ibb.co/61Xcyzf/TT-91-1.jpg",
+        "minOrderQuantity": "3",
+        "availabelQuantity": "10",
+        "price": "400"
+    },
+    {
+        "id": "4",
+        "name": "Bench Grinder",
+        "shortDescription": "TOLSEN Heavy Duty Bench Grinder 6 (150x16x12.7mm) 79646",
+        "specification": [
+            "CERTIFIED ORIGINAL TOLSEN BRAND",
+            "Model: 79646",
+            "Power: 150W",
+            "Wheel Size:6/150x16x12.7mm",
+            "Voltage: 220-240V",
+            "No load speed: 2950r/min",
+            "Adjustable work rest"
+        ],
+        "img": "https://i.ibb.co/k4Fhr0k/TT-94-1.jpg",
+        "minOrderQuantity": "6",
+        "availabelQuantity": "6",
+        "price": "120"
+    },
+    {
+        "id": "5",
+        "name": "Demolition Hammer",
+        "shortDescription": "TOLSEN Industrial Demolition Hammer (1700W) FX Series 79517",
+        "specification": [
+            "CERTIFIED ORIGINAL TOLSEN BRAND",
+            "Model: 79546",
+            "GS approved",
+            "Input power: 1700W",
+            "Voltage: 220-240V",
+            "Frequency: 50Hz",
+            "Impact force: 60J"
+        ],
+        "img": "https://i.ibb.co/BzyZxfz/TT-103-1.jpg",
+        "minOrderQuantity": "2",
+        "availabelQuantity": "6",
+        "price": "500"
+    },
+    {
+        "id": "6",
+        "name": " Rotary Hammer",
+        "shortDescription": "TOLSEN Rotary Hammer 1500W 32mm Industrial FX Series 79513",
+        "specification": [
+            "CERTIFIED ORIGINAL TOLSEN BRAND",
+            "Model: 79513",
+            "GS approved",
+            "Input power: 1500W",
+            "Voltage: 220-240V",
+            "Frequency: 50Hz",
+            "Impact force: 5.5J"
+        ],
+        "img": "https://i.ibb.co/tcQbB9M/TT-104-1.jpg",
+        "minOrderQuantity": "4",
+        "availabelQuantity": "6",
+        "price": "300"
+    }
+]
