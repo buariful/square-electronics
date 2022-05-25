@@ -11,7 +11,7 @@ const firebaseConfig = {
     projectId: "square-electric",
     storageBucket: "square-electric.appspot.com",
     messagingSenderId: "121946096267",
-    appId: "1:121946096267:web:ba0b1c64d9b3f90cf38a8e"
+    appId: "1:121946096267:web:ba0b1c64d9b3f90cf38a8e",
 };
 
 // Initialize Firebase

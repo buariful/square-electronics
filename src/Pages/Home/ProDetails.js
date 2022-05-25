@@ -13,9 +13,7 @@ const ProDetails = () => {
         )
     )
     const product = data?.find(data => data._id === productId)
-    console.log(product)
-    // const { availabelQuantity, minOrderQuantity, name, price, shortDescription, specification } = product;
-    console.log(product)
+
     if (isLoading) {
         return <Loading></Loading>
     }
