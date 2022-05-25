@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Banner from './Banner';
+import Products from './Products';
 
 const Home = () => {
-    const [product, setProduct] = useState([]);
-
-    useEffect(() => {
-        fetch('product.json')
-            .then(res => res.json())
-            .then(data => setProduct(data))
-    }, [])
     return (
         <div>
             <Banner></Banner>
+            <Products></Products>
         </div>
     );
 };
