@@ -2,9 +2,10 @@ import React from 'react';
 import logo from '../img/logo.png'
 
 const footer = () => {
+
     return (
         <div>
-            <div className="bg-[#f5c87694] py-5 location mx-auto md:flex justify-around items-center">
+            <div className="bg-[#f5c87694] py-5 px-5 location mx-auto md:flex justify-around items-center">
                 <div>
                     <img src={logo} alt="logo" className='mx-auto w-20 md:w-52' />
                 </div>
@@ -32,6 +33,11 @@ const footer = () => {
                     </div>
                 </div>
             </div>
+            <footer class="footer footer-center p-4 bg-[#ebb045] text-base-content">
+                <div>
+                    <p>Copyright ©  2022- All right reserved by Square-electronics</p>
+                </div>
+            </footer>
         </div>
     );
 };
