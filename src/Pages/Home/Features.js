@@ -1,8 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CreditCardIcon, CurrencyEuroIcon, ShieldCheckIcon, TruckIcon } from '@heroicons/react/solid';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../img/logo.png'
 
 const Features = () => {
     return (
@@ -14,21 +11,21 @@ const Features = () => {
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">
-                                <CurrencyEuroIcon className='w-8 text-secondary'></CurrencyEuroIcon> GREAT VALUE</h2>
+                                <CurrencyEuroIcon className='w-8 text-secondary hidden md:static'></CurrencyEuroIcon> GREAT VALUE</h2>
                             <p className='text-left'>Most popular brands with widest range of selection at best prices.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">
-                                <TruckIcon className='w-8 text-secondary'></TruckIcon> NATIONWIDE DELIVERY</h2>
+                                <TruckIcon className='w-8 text-secondary hidden md:static'></TruckIcon> NATIONWIDE DELIVERY</h2>
                             <p className='text-left'>Over 20,000 pincodes serviceable across the country.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">
-                                <CreditCardIcon className='w-8 text-secondary'></CreditCardIcon>
+                                <CreditCardIcon className='w-8 text-secondary hidden md:static'></CreditCardIcon>
                                 SECURE PAYMENT</h2>
                             <p className='text-left'>Partnered with India's most popular and secure payment solutions.</p>
                         </div>
@@ -36,41 +33,27 @@ const Features = () => {
                     <div class="card">
                         <div class="card-body">
                             <h2 class="card-title">
-                                <ShieldCheckIcon className='w-8 text-secondary'></ShieldCheckIcon>
+                                <ShieldCheckIcon className='w-8 text-secondary hidden md:static'></ShieldCheckIcon>
                                 BUYER PROTECTION</h2>
                             <p className='text-left'>Committed to buyer interests to provide smooth shopping experience.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="bg-[#f5c87694] py-5 location mx-auto mt-8 md:flex justify-around items-center">
-                <div>
-                    <img src={logo} alt="logo" />
+            <div className='px-4 py-5 md:flex bg-[#e5e5e5]'>
+                <div className='basis-1/3 '>
+                    <h3 className='font-semibold text-xl mb-5'>Member of</h3>
+                    <img src="https://i.ibb.co/sgS7TNp/E-CAB-Logo.png" className='w-28 mx-auto' alt="e-cab" />
                 </div>
-                <div className='text-center'>
-                    <h1 className='font-semibold text-2xl '>Find us</h1>
-                    <div className='text-left'>
-                        <p>Phone : <span className='font-semibold'>01234568</span></p>
-                        <p>Email : <span className='font-semibold'>abcextra@gmail.com</span></p>
-                        <p>Address : <span className='font-semibold'>12/13 lake road , Dhanmondi, Dhaka-1205</span></p>
-                    </div>
-                    <h3 className='mt-8 font-semibold text-xl mb-5'>Stay connected</h3>
-                    <div className='flex gap-4 justify-center'>
-                        <a href="http://www.twitter.com" target="_blank">
-                            <img className='w-8 cursor-pointer' src="https://i.ibb.co/hYg8g65/360-F-376121893-u-RNqv00-YX0-Jr2-Nr-WYQv-RRhu-DSm-SEAJMv.jpg" alt="twitter" />
-
-                        </a>
-                        <a href="http://www.linkedin.com" target="_blank">
-
-                            <img className='w-8 cursor-pointer' src="https://i.ibb.co/pyGNQHb/linkein.png" alt="linkedin" />
-                        </a>
-                        <a href="http://www.facebook.com" target="_blank">
-
-                            <img className='w-8 cursor-pointer' src="https://i.ibb.co/cyLBK6Q/pngtree-facebook-logo-facebook-icon-png-image-3566127.png" alt="facebook" />
-                        </a>
-                    </div>
+                <div className='basis-2/3'>
+                    <h3 className='font-semibold text-xl mb-5'>Our partners</h3>
+                    <img src="https://i.ibb.co/PWwjRnf/ecourier-logo-01.png" alt="e-courier" className='w-1/3 mx-auto' />
+                    <img src="https://i.ibb.co/t4HZbqN/dhl-logo.png" alt="dhl" className='w-1/3 mx-auto' />
                 </div>
             </div>
+
+
+
         </div>
     );
 };

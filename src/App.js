@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './Shared/Navbar';
@@ -6,6 +6,7 @@ import Blog from './Pages/Blog';
 import Login from './Pages/Login';
 import Home from './Pages/Home/Home';
 import ProDetails from './Pages/Home/ProDetails';
+import Footer from './Shared/Footer'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/prodetails/:id' element={<ProDetails></ProDetails>} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
