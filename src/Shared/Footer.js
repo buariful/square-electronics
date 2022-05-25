@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import logo from '../img/logo.png'
 
@@ -33,7 +35,7 @@ const footer = () => {
                     </div>
                 </div>
             </div>
-            <footer class="footer footer-center p-4 bg-[#ebb045] text-base-content">
+            <footer className="footer footer-center p-4 bg-[#ebb045] text-base-content">
                 <div>
                     <p>Copyright ©  2022- All right reserved by Square-electronics</p>
                 </div>

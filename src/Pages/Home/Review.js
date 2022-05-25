@@ -12,7 +12,7 @@ const Review = ({ review }) => {
         <div className='bg-base-200 shadow-xl rounded-lg m-5 flex p-5'>
             <div className='basis-1/3'>
                 <h2 className='font-semibold'>{user}</h2>
-                <div class="rating">
+                <div className="rating">
                     <ReactStars {...firstExample} />
                 </div>
             </div>

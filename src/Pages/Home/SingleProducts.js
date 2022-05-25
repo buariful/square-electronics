@@ -2,10 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SingleProducts = ({ product }) => {
-    const { availabelQuantity, img, minOrderQuantity, name, price, shortDescription, id } = product;
+    const { availabelQuantity, img, minOrderQuantity, name, price, shortDescription, _id } = product;
     const navigate = useNavigate();
     const details = () => {
-        navigate(`/prodetails/${id}`)
+        navigate(`/prodetails/${_id}`)
     }
     return (
         <div id='products'>

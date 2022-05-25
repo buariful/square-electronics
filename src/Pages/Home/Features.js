@@ -8,31 +8,31 @@ const Features = () => {
                 <h1 className='font-bold text-3xl my-10'>Why to  <span className='text-neutral'>Choose us</span></h1>
 
                 <div className='grid md:grid-cols-4 grid-cols-2'>
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">
+                    <div className="card">
+                        <div className="card-body">
+                            <h2 className="card-title">
                                 <CurrencyEuroIcon className='w-8 text-secondary hidden md:static'></CurrencyEuroIcon> GREAT VALUE</h2>
                             <p className='text-left'>Most popular brands with widest range of selection at best prices.</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">
+                    <div className="card">
+                        <div className="card-body">
+                            <h2 className="card-title">
                                 <TruckIcon className='w-8 text-secondary hidden md:static'></TruckIcon> NATIONWIDE DELIVERY</h2>
                             <p className='text-left'>Over 20,000 pincodes serviceable across the country.</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">
+                    <div className="card">
+                        <div className="card-body">
+                            <h2 className="card-title">
                                 <CreditCardIcon className='w-8 text-secondary hidden md:static'></CreditCardIcon>
                                 SECURE PAYMENT</h2>
                             <p className='text-left'>Partnered with India's most popular and secure payment solutions.</p>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">
+                    <div className="card">
+                        <div className="card-body">
+                            <h2 className="card-title">
                                 <ShieldCheckIcon className='w-8 text-secondary hidden md:static'></ShieldCheckIcon>
                                 BUYER PROTECTION</h2>
                             <p className='text-left'>Committed to buyer interests to provide smooth shopping experience.</p>
