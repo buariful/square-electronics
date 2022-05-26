@@ -14,6 +14,7 @@ const ProDetails = () => {
 
     const [button, setButton] = useState(true)
     const [price, setTotalPrice] = useState(0)
+    const [quantityError, setQuantityError] = useState('');
 
 
     // get the user
@@ -36,9 +37,14 @@ const ProDetails = () => {
     const handleQuantity = (props) => {
         if (props < parseInt(product?.minOrderQuantity) || props > parseInt(product?.availabelQuantity)) {
             setButton(false)
+            setQuantityError(`You have to between ${product?.minOrderQuantity} and ${product?.availabelQuantity}`)
+        }
+        else if (props <= 0) {
+            setQuantityError('You have to enter positive numbers')
         }
         else {
             setButton(true)
+            setQuantityError('')
         }
         setTotalPrice(props * parseInt(product?.price))
     }
@@ -87,7 +93,9 @@ const ProDetails = () => {
 
                 {/* user info for replace order */}
                 <div>
+
                     <form className=' bg-base-200 shadow-lg rounded-lg w-8/12 md:w-1/2 lg:w-10/12 mx-auto p-5' onSubmit={handleSUbmit}>
+                        {quantityError && <p className='bg-primary text-secondary font-semibold py-2 px-3'>{quantityError}</p>}
 
                         <input type="text" value={user?.displayName} disabled className="input input-bordered w-full max-w-xs mb-3" name='name' />
 
