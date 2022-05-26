@@ -13,6 +13,7 @@ const Navbar = () => {
         setIcon(!icon)
     }
     const [user, loading] = useAuthState(auth);
+
     const logout = () => {
         signOut(auth);
     };
@@ -28,8 +29,11 @@ const Navbar = () => {
                         <Link to='/home' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Home</Link>
                         <Link to='/Blog' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Blog</Link>
 
+                        {user ? <Link to='/dashboard' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Dashboard</Link> : ''}
+
                         {user ? <button className='block py-8 text-white ml-3 md:ml-5 font-semibold' onClick={logout}>Sign out</button> : <Link to='/login' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Login</Link>
                         }
+                        {user ? <p className='block py-8 text-secondary ml-3 md:ml-5 font-semibold'>{user.displayName}</p> : ''}
 
 
 

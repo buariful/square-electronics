@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
@@ -11,6 +11,7 @@ const ProDetails = () => {
     const [shippingAddress, setShippingAddress] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
     const [orderQuantity, setOrderQuantity] = useState('');
+    const [orderData, setOrderData] = useState('');
 
     const [button, setButton] = useState(true)
     const [price, setTotalPrice] = useState(0)
@@ -23,7 +24,7 @@ const ProDetails = () => {
     // get the specific product
     const props = useParams()
     const productId = props.id;
-    const { isLoading, error, data } = useQuery('repoData', () =>
+    const { isLoading, data } = useQuery('repoData', () =>
         fetch('http://localhost:5000/products').then(res =>
             res.json()
         )
@@ -64,6 +65,26 @@ const ProDetails = () => {
         setShippingAddress('');
         setMobileNumber('');
         setOrderQuantity('');
+
+        // post order data to MONGODB
+        const orderDetails = {
+            name: name,
+            email: email,
+            shippingAddress: shippingAddress,
+            mobileNumber: mobileNumber,
+            orderQuantity: orderQuantity,
+            totalPrice: price
+        }
+
+        fetch('http://localhost:5000/orders', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderDetails)
+        })
+            .then(res => res.json())
+            .then(data => setOrderData(data))
 
     }
     return (

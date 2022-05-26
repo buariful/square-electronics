@@ -9,6 +9,7 @@ import Footer from './Shared/Footer'
 import Login from './Pages/Login/Login';
 import Singup from './Pages/Login/Singup';
 import RequireAuth from './Shared/RequireAuth';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -22,6 +23,12 @@ function App() {
         <Route path='/prodetails/:id' element={
           <RequireAuth>
             <ProDetails></ProDetails>
+          </RequireAuth>
+        } />
+
+        <Route path='/dashboard' element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
           </RequireAuth>
         } />
 
