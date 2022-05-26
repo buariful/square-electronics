@@ -15,7 +15,7 @@
         "img": "https://i.ibb.co/Gt4dXYv/TT-89-1.jpg",
         "img2": "https://i.ibb.co/xs1CCFv/TT-89-1-1.jpg",
         "minOrderQuantity": "5",
-        "availabelQuantity": "6",
+        "availabelQuantity": "600",
         "price": "345"
     },
     {
@@ -34,7 +34,7 @@
         "img": "https://i.ibb.co/WKhSG8r/TT-90-1.jpg",
         "img2": "https://i.ibb.co/YbY13zc/TT-90-1-1.jpg",
         "minOrderQuantity": "4",
-        "availabelQuantity": "6",
+        "availabelQuantity": "600",
         "price": "369"
     },
     {
@@ -53,7 +53,7 @@
         "img": "https://i.ibb.co/61Xcyzf/TT-91-1.jpg",
         "img2": "https://i.ibb.co/pyZmpcq/TT-91-1-1.jpg",
         "minOrderQuantity": "3",
-        "availabelQuantity": "10",
+        "availabelQuantity": "1000",
         "price": "400"
     },
     {
@@ -72,7 +72,7 @@
         "img": "https://i.ibb.co/k4Fhr0k/TT-94-1.jpg",
         "img2": "https://i.ibb.co/SNFVmXd/TT-94-1-1.jpg",
         "minOrderQuantity": "6",
-        "availabelQuantity": "6",
+        "availabelQuantity": "600",
         "price": "120"
     },
     {
@@ -91,7 +91,7 @@
         "img": "https://i.ibb.co/BzyZxfz/TT-103-1.jpg",
         "img2": "https://i.ibb.co/g90DcMc/TT-103-1-1.jpg",
         "minOrderQuantity": "2",
-        "availabelQuantity": "6",
+        "availabelQuantity": "600",
         "price": "500"
     },
     {
@@ -110,7 +110,7 @@
         "img": "https://i.ibb.co/tcQbB9M/TT-104-1.jpg",
         "img2": "https://i.ibb.co/grXHRwn/TT-104-1-1.jpg",
         "minOrderQuantity": "4",
-        "availabelQuantity": "6",
+        "availabelQuantity": "600",
         "price": "300"
     }
 ]

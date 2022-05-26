@@ -12,6 +12,10 @@ const ProDetails = () => {
     const [mobileNumber, setMobileNumber] = useState('');
     const [orderQuantity, setOrderQuantity] = useState('');
 
+    const [button, setButton] = useState(true)
+    const [price, setTotalPrice] = useState(0)
+
+
     // get the user
     const [user] = useAuthState(auth);
 
@@ -28,12 +32,19 @@ const ProDetails = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
+    // handleQuantity
+    const handleQuantity = (props) => {
+        if (props < parseInt(product?.minOrderQuantity) || props > parseInt(product?.availabelQuantity)) {
+            setButton(false)
+        }
+        else {
+            setButton(true)
+        }
+        setTotalPrice(props * parseInt(product?.price))
+    }
+
 
     // for submit the form
-
-
-
-
     const handleSUbmit = event => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -97,9 +108,12 @@ const ProDetails = () => {
                             <span className="label-text">Quantity</span>
                         </label>
 
-                        <input type="number" required className="input input-bordered w-full max-w-xs mb-3" name='orderQuantity' onChange={event => setOrderQuantity(event.target.value)} value={orderQuantity} />
-
-                        <input type="submit" value="Purchase" className='btn btn-secondary' />
+                        <input type="number" required className="input input-bordered w-full max-w-xs mb-3" name='orderQuantity' onChange={event => {
+                            setOrderQuantity(event.target.value);
+                            handleQuantity(parseInt(event.target.value))
+                        }} value={orderQuantity} />
+                        <h2 className='my-3 font-semibold'>Total price <span className='text-secondary'> {price ? price : 0}</span></h2>
+                        {button ? <input type="submit" value="Purchase" className='btn btn-secondary' /> : <input type="submit" value="Purchase" className='btn btn-secondary' disabled />}
                     </form>
                 </div>
             </div>
