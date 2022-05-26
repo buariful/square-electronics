@@ -38,9 +38,9 @@ const ProDetails = () => {
     const handleQuantity = (props) => {
         if (props < parseInt(product?.minOrderQuantity) || props > parseInt(product?.availabelQuantity)) {
             setButton(false)
-            setQuantityError(`You have to between ${product?.minOrderQuantity} and ${product?.availabelQuantity}`)
+            setQuantityError(`You have to order between ${product?.minOrderQuantity} and ${product?.availabelQuantity}`)
         }
-        else if (props <= 0) {
+        else if (props < 0) {
             setQuantityError('You have to enter positive numbers')
         }
         else {
@@ -76,15 +76,7 @@ const ProDetails = () => {
             totalPrice: price
         }
 
-        fetch('http://localhost:5000/orders', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(orderDetails)
-        })
-            .then(res => res.json())
-            .then(data => setOrderData(data))
+
 
     }
     return (
@@ -141,6 +133,7 @@ const ProDetails = () => {
                             setOrderQuantity(event.target.value);
                             handleQuantity(parseInt(event.target.value))
                         }} value={orderQuantity} />
+
                         <h2 className='my-3 font-semibold'>Total price <span className='text-secondary'> {price ? price : 0}</span></h2>
                         {button ? <input type="submit" value="Purchase" className='btn btn-secondary' /> : <input type="submit" value="Purchase" className='btn btn-secondary' disabled />}
                     </form>
