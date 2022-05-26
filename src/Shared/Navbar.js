@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../img/logo.png'
 import { MenuIcon, XIcon } from '@heroicons/react/solid';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
+import { signOut } from 'firebase/auth';
 
 
 const Navbar = () => {
@@ -9,7 +12,10 @@ const Navbar = () => {
     const iconChange = () => {
         setIcon(!icon)
     }
-
+    const [user, loading] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    };
     return (
         <nav className='bg-primary'>
             <div className="w-11/12 mx-auto" >
@@ -21,7 +27,9 @@ const Navbar = () => {
                     <div className='md:flex'>
                         <Link to='/home' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Home</Link>
                         <Link to='/Blog' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Blog</Link>
-                        <Link to='/login' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Login</Link>
+
+                        {user ? <button className='block py-8 text-white ml-3 md:ml-5 font-semibold' onClick={logout}>Sign out</button> : <Link to='/login' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Login</Link>
+                        }
 
 
 

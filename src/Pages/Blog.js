@@ -1,9 +1,10 @@
 import React from 'react';
+import Loading from '../Shared/Loading';
 
 const Blog = () => {
     return (
         <div>
-            this is blog page
+            <Loading></Loading>
         </div>
     );
 };

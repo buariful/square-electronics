@@ -4,11 +4,12 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Loading';
 
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/appointment";
+    let from = location.state?.from?.pathname || "/home";
 
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -39,7 +40,7 @@ const Login = () => {
     }
 
     if (loading || gLoading) {
-        return <button className='btn loading'>Loading</button>
+        return <Loading></Loading>
     }
 
     return (
