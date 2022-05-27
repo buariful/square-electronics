@@ -14,6 +14,7 @@ import NotFound from './Pages/NotFound';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Protfolio from './Pages/Protfolio/Protfolio';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
 
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Singup></Singup>}></Route>
+        <Route path='/protfolio' element={<Protfolio />}></Route>
+
+
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
