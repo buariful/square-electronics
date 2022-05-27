@@ -1,14 +1,34 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
 const AddReview = () => {
-    const [review, setReview] = useState();
+    const [reviews, setReviews] = useState();
+    const [user] = useAuthState(auth);
+    const [data, setData] = useState('');
+
     const handleReview = event => {
         event.preventDefault();
-        const ratings = (event.target.rating.value);
-        const text = review;
-        console.log(ratings, text)
-        setReview('')
+        const review = {
+            user: user.displayName,
+            ratings: event.target.rating.value,
+            text: reviews
+        }
+        console.log(review);
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => setData(data));
+
+
+
+        setReviews('')
     }
     return (
         <div>
@@ -26,8 +46,8 @@ const AddReview = () => {
                         placeholder="Write here..."
                         name='text'
                         onChange={event => {
-                            setReview(event.target.value);
-                        }} value={review}
+                            setReviews(event.target.value);
+                        }} value={reviews}
                     />
 
 
