@@ -11,6 +11,9 @@ import Singup from './Pages/Login/Singup';
 import RequireAuth from './Shared/RequireAuth';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import NotFound from './Pages/NotFound';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddReview from './Pages/Dashboard/AddReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -31,7 +34,11 @@ function App() {
           <RequireAuth>
             <Dashboard></Dashboard>
           </RequireAuth>
-        } />
+        } >
+          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route path='/dashboard/addreview' element={<AddReview></AddReview>}></Route>
+          <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
+        </Route>
 
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Singup></Singup>}></Route>

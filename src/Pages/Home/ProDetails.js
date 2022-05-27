@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProDetails = () => {
     // for form value clear
@@ -13,10 +14,11 @@ const ProDetails = () => {
     const [orderQuantity, setOrderQuantity] = useState('');
     const [orderData, setOrderData] = useState('');
 
-    const [button, setButton] = useState(true)
     const [price, setTotalPrice] = useState(0)
+    const [button, setButton] = useState(true)
     const [quantityError, setQuantityError] = useState('');
 
+    const navigate = useNavigate();
 
     // get the user
     const [user] = useAuthState(auth);
@@ -30,7 +32,6 @@ const ProDetails = () => {
         )
     )
     const product = data?.find(data => data._id === productId)
-
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -49,6 +50,7 @@ const ProDetails = () => {
         }
         setTotalPrice(props * parseInt(product?.price))
     }
+
 
 
     // for submit the form
@@ -73,12 +75,25 @@ const ProDetails = () => {
             shippingAddress: shippingAddress,
             mobileNumber: mobileNumber,
             orderQuantity: orderQuantity,
-            totalPrice: price
+            totalPrice: price,
+            transId: '',
+            status: "Unpaid",
+            productId: product?._id
         }
+        toast.success('Success! Go to dashboard for payment')
 
-
+        fetch('http://localhost:5000/orders', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderDetails)
+        })
+            .then(res => res.json())
+            .then(data => setOrderData(data))
 
     }
+
     return (
         <div className='w-11/12 mx-auto'>
             {/* product deatail */}
@@ -97,12 +112,11 @@ const ProDetails = () => {
                     <div className='mt-4'>
                         <h3 className='text-xl'>Specifications :</h3>
                         <ul>
-                            {product?.specification.map(data => <small><li>{data}</li></small>)}
+                            {product?.specification.map(data => <small ><li>{data}</li></small>)}
                         </ul>
                     </div>
 
                 </div>
-
 
                 {/* user info for replace order */}
                 <div>
@@ -129,13 +143,18 @@ const ProDetails = () => {
                             <span className="label-text">Quantity</span>
                         </label>
 
-                        <input type="number" required className="input input-bordered w-full max-w-xs mb-3" name='orderQuantity' onChange={event => {
-                            setOrderQuantity(event.target.value);
-                            handleQuantity(parseInt(event.target.value))
-                        }} value={orderQuantity} />
+                        <input type="number"
+                            required
+                            className="input input-bordered w-full max-w-xs mb-3" name='orderQuantity'
+                            onChange={event => {
+                                setOrderQuantity(event.target.value);
+                                handleQuantity(parseInt(event.target.value))
+                            }} value={orderQuantity} />
 
                         <h2 className='my-3 font-semibold'>Total price <span className='text-secondary'> {price ? price : 0}</span></h2>
+                        <ToastContainer></ToastContainer>
                         {button ? <input type="submit" value="Purchase" className='btn btn-secondary' /> : <input type="submit" value="Purchase" className='btn btn-secondary' disabled />}
+
                     </form>
                 </div>
             </div>
