@@ -25,6 +25,7 @@ const ProDetails = () => {
 
     // get the specific product
     const props = useParams()
+
     const productId = props.id;
     const { isLoading, data } = useQuery('repoData', () =>
         fetch('http://localhost:5000/products').then(res =>
@@ -32,6 +33,7 @@ const ProDetails = () => {
         )
     )
     const product = data?.find(data => data._id === productId)
+
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -78,7 +80,9 @@ const ProDetails = () => {
             totalPrice: price,
             transId: '',
             status: "Unpaid",
-            productId: product?._id
+            productId: product?._id,
+            prodName: product.name,
+            prodImg: product.img
         }
         toast.success('Success! Go to dashboard for payment')
 
@@ -137,7 +141,7 @@ const ProDetails = () => {
                         <label className="label">
                             <span className="label-text">Phone number</span>
                         </label>
-                        <input type="number" placeholder="012546987" required className="input input-bordered w-full max-w-xs mb-3" name='mobileNumber' onChange={event => setMobileNumber(event.target.value)} value={mobileNumber} />
+                        <input type="tel" placeholder="012546987" required className="input input-bordered w-full max-w-xs mb-3" name='mobileNumber' onChange={event => setMobileNumber(event.target.value)} value={mobileNumber} />
 
                         <label className="label">
                             <span className="label-text">Quantity</span>

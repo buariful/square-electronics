@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 
@@ -15,7 +16,7 @@ const AddReview = () => {
             ratings: event.target.rating.value,
             text: reviews
         }
-        console.log(review);
+
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
@@ -26,9 +27,8 @@ const AddReview = () => {
             .then(res => res.json())
             .then(data => setData(data));
 
-
-
         setReviews('')
+        toast.success('Thanks a lot for your feedback..')
     }
     return (
         <div>
@@ -61,6 +61,7 @@ const AddReview = () => {
                     </div>
                     <br />
                     <input type="submit" value="Send" className='btn btn-neutral mt-4' />
+                    <ToastContainer></ToastContainer>
                 </form>
             </div>
         </div>

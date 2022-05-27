@@ -28,6 +28,7 @@ const MyOrders = () => {
                         <th> Quantity</th>
                         <th>Price</th>
                         <th>Status</th>
+                        <th>Pay</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -42,6 +43,7 @@ const MyOrders = () => {
                         <th> Quantity</th>
                         <th>Price</th>
                         <th>Status</th>
+                        <th>Pay</th>
                         <th>Delete</th>
                     </tr>
                 </tfoot>

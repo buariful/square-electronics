@@ -1,14 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading';
+import UserInfo from '../../Shared/UserInfo';
 
 const Signup = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/home";
+
+
+
+    let from = location.state?.from?.pathname || "/dashboard";
 
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -22,16 +26,19 @@ const Signup = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+
     const onSubmit = async data => {
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
-    };
 
+
+    };
 
     useEffect(() => {
         if (user || gUser) {
             navigate(from, { replace: true });
-            console.log(user || gUser)
+
+
         }
     }, [user, gUser, from, navigate])
 
@@ -61,6 +68,7 @@ const Signup = () => {
                                 type="email"
                                 placeholder="your email"
                                 className="input input-bordered w-full max-w-xs"
+
                                 {...register("email", {
                                     required: {
                                         value: true,

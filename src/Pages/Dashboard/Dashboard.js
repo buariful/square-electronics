@@ -1,12 +1,27 @@
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useQuery } from 'react-query';
 import { Link, Outlet } from 'react-router-dom';
-import auth from '../../firebase.init';
+
 
 const Dashboard = () => {
-
-
+    // const [user] = useAuthState(auth);
+    // const abc = () => {
+    //     const newUser = {
+    //         userName: user.displayName,
+    //         userEmail: user.email,
+    //         userEdu: '',
+    //         userPhone: '',
+    //         userAddress: '',
+    //         userLinkedInProfile: ''
+    //     }
+    //     fetch('http://localhost:5000/users', {
+    //         method: 'PUT',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(newUser)
+    //     })
+    // }
+    // abc()
     return (
         <div>
             <div className="drawer drawer-mobile">
@@ -18,7 +33,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto bg-base-100 text-base-content">
+                    <ul className="menu p-4 overflow-y-auto bg-[#e74900c4] text-white text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li><Link to='/dashboard'>My orders</Link></li>
                         <li><Link to='/dashboard/addreview'>Add a review</Link></li>

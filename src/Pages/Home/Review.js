@@ -17,7 +17,7 @@ const Review = ({ review }) => {
                 </div>
             </div>
             <div className='basis-2/3 text-right'>
-                <p>{text}</p>
+                <small>{text}</small>
             </div>
         </div>
     );
