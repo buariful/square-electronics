@@ -9,7 +9,7 @@ import SingleOrder from './SingleOrder';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const { isLoading, data } = useQuery('repoData', () =>
-        fetch('http://localhost:5000/orders').then(res =>
+        fetch('https://fast-wildwood-48661.herokuapp.com/orders').then(res =>
             res.json()
         )
     )
@@ -55,7 +55,7 @@ const MyOrders = () => {
 
 export default MyOrders;
 // const { isLoading, data } = useQuery('repoData', () =>
-//     fetch('http://localhost:5000/orders').then(res =>
+//     fetch('https://fast-wildwood-48661.herokuapp.com/orders').then(res =>
 //         res.json()
 //     )
 // )

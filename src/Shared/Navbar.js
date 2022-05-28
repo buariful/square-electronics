@@ -16,6 +16,7 @@ const Navbar = () => {
 
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken')
     };
     return (
         <nav className='bg-primary'>
@@ -30,6 +31,8 @@ const Navbar = () => {
                         <Link to='/Blog' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Blog</Link>
 
                         {user ? <Link to='/dashboard' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Dashboard</Link> : ''}
+
+                        <Link to='/portfolio' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Portfolio</Link>
 
                         {user ? <button className='block py-8 text-white ml-3 md:ml-5 font-semibold' onClick={logout}>Sign out</button> : <Link to='/login' className='block py-8 text-white ml-3 md:ml-5 font-semibold'>Login</Link>
                         }

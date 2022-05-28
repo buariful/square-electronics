@@ -43,7 +43,7 @@ function App() {
 
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Singup></Singup>}></Route>
-        <Route path='/protfolio' element={<Protfolio />}></Route>
+        <Route path='/portfolio' element={<Protfolio />}></Route>
 
 
         <Route path='*' element={<NotFound></NotFound>}></Route>

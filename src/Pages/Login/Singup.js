@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useSignInWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import Loading from '../../Shared/Loading';
-import UserInfo from '../../Shared/UserInfo';
+import UseToken from '../../Shared/Hooks/UseToken';
+
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -24,6 +25,9 @@ const Signup = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating] = useUpdateProfile(auth);
 
+    // get the token from useToken hook
+    const [token] = UseToken(gUser || user);
+
     const { register, formState: { errors }, handleSubmit } = useForm();
 
 
@@ -35,12 +39,12 @@ const Signup = () => {
     };
 
     useEffect(() => {
-        if (user || gUser) {
-            navigate(from, { replace: true });
+        if (token) {
+            navigate('/dashboard');
 
 
         }
-    }, [user, gUser, from, navigate])
+    }, [token, from, navigate])
 
     let logError;
     if (gError || error) {

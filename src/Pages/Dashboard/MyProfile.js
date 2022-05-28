@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../../Shared/Loading';
 
@@ -8,8 +9,9 @@ import Loading from '../../Shared/Loading';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     const [mydata, setMyData] = useState({});
+
     const { isLoading, data } = useQuery('repoDaata', () =>
-        fetch('http://localhost:5000/users').then(res =>
+        fetch('https://fast-wildwood-48661.herokuapp.com/users').then(res =>
             res.json()
         )
     )
@@ -17,19 +19,23 @@ const MyProfile = () => {
         return <Loading></Loading>
     }
     const myInfo = data?.find(data => data.userEmail === user.email)
-    console.log(myInfo)
-    console.log(data)
+
     const handleUser = (event) => {
         const newUser = {
             userName: user.displayName,
             userEmail: user.email,
             userEducation: event.target.education.value ? event.target.education.value : myInfo.userEducation,
+
             userAddress: event.target.address.value ? event.target.address.value : myInfo.userAddress,
+
             userMobile: event.target.mobile.value ? event.target.mobile.value : myInfo.userMobile,
+
             userImage: event.target.image.value ? event.target.image.value : myInfo.userImage,
+
             userLinkedInProfile: event.target.linkedin.value ? event.target.linkedin.value : myInfo.userLinkedInProfile,
         }
-        fetch(`http://localhost:5000/users/${user.email}`, {
+
+        fetch(`https://fast-wildwood-48661.herokuapp.com/users/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

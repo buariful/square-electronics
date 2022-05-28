@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../../Shared/Loading';
@@ -28,15 +28,16 @@ const ProDetails = () => {
 
     const productId = props.id;
     const { isLoading, data } = useQuery('repoData', () =>
-        fetch('http://localhost:5000/products').then(res =>
+        fetch('https://fast-wildwood-48661.herokuapp.com/products').then(res =>
             res.json()
         )
     )
-    const product = data?.find(data => data._id === productId)
-
     if (isLoading) {
         return <Loading></Loading>
     }
+    const product = data?.find(data => data._id === productId)
+
+
     // handleQuantity
     const handleQuantity = (props) => {
         if (props < parseInt(product?.minOrderQuantity) || props > parseInt(product?.availabelQuantity)) {
@@ -65,6 +66,7 @@ const ProDetails = () => {
         const orderQuantity = event.target.orderQuantity.value;
 
 
+
         // reset the form input value
         setShippingAddress('');
         setMobileNumber('');
@@ -86,7 +88,7 @@ const ProDetails = () => {
         }
         toast.success('Success! Go to dashboard for payment')
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://fast-wildwood-48661.herokuapp.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -95,6 +97,29 @@ const ProDetails = () => {
         })
             .then(res => res.json())
             .then(data => setOrderData(data))
+
+        // update product quantity in database
+        const remaingQuantity = parseInt(product.availabelQuantity) - parseInt(orderQuantity);
+        const newProduct = {
+            availabelQuantity: remaingQuantity,
+            img: product.img,
+            img2: product.img2,
+            minOrderQuantity: product.minOrderQuantity,
+            name: product.name,
+            price: product.price,
+            shortDescription: product.shortDescription,
+
+        }
+        fetch(`https://fast-wildwood-48661.herokuapp.com/updateproducts/${productId}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+
 
     }
 

@@ -3,25 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 
 const Dashboard = () => {
-    // const [user] = useAuthState(auth);
-    // const abc = () => {
-    //     const newUser = {
-    //         userName: user.displayName,
-    //         userEmail: user.email,
-    //         userEdu: '',
-    //         userPhone: '',
-    //         userAddress: '',
-    //         userLinkedInProfile: ''
-    //     }
-    //     fetch('http://localhost:5000/users', {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(newUser)
-    //     })
-    // }
-    // abc()
+
     return (
         <div>
             <div className="drawer drawer-mobile">

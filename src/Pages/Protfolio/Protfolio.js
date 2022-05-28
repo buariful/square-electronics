@@ -17,6 +17,7 @@ const Protfolio = () => {
                         <div className='flex'>
                             <h2>Find me on</h2>
                             <a href="https://www.facebook.com/buariful" target='_blank' rel="noreferrer"><img src="https://i.ibb.co/cyLBK6Q/pngtree-facebook-logo-facebook-icon-png-image-3566127.png" alt="" className='w-6 rounded-md ml-3' /></a>
+
                             <a href="https://www.linkedin.com/in/md-bu-ariful-islam-70210b202/" target='_blank' rel="noreferrer"><img src="https://i.ibb.co/pyGNQHb/linkein.png" alt="" className='w-6 rounded-md ml-3' /></a>
                         </div>
                     </div>
@@ -54,17 +55,17 @@ const Protfolio = () => {
 
                 <div className='grid grid-cols-1 lg:grid-cols-3 w-11/12 mx-auto gap-5 my-10'>
                     <div>
-                        <a href="https://incredible-piroshki-93c289.netlify.app/home">
+                        <a href="https://incredible-piroshki-93c289.netlify.app/home" target='_blank' rel="noreferrer">
                             <img src="https://i.ibb.co/VBjM53J/Screenshot-5.png" alt="" className='rounded-lg' />
                         </a>
                     </div>
                     <div>
-                        <a href="https://mobile-shop-bd.netlify.app/">
+                        <a href="https://mobile-shop-bd.netlify.app/" target='_blank' rel="noreferrer">
                             <img src="https://i.ibb.co/r0HpyQx/Screenshot-6.png" alt="" className='rounded-lg' />
                         </a>
                     </div>
                     <div>
-                        <a href="https://clever-blini-42477d.netlify.app/home">
+                        <a href="https://clever-blini-42477d.netlify.app/home" target='_blank' rel="noreferrer">
                             <img src="https://i.ibb.co/5Y41bbf/Screenshot-7.png" alt="" className='rounded-lg' />
                         </a>
                     </div>
