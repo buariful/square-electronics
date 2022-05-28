@@ -3,7 +3,7 @@ import './protfolio.css'
 const Protfolio = () => {
     return (
         <div>
-            <div className='min-h-screen banner relative'>
+            <div className='min-h-screen port-banner relative'>
                 <div className='absolute inset-0 z-20 bg-gradient-to-r from-[#543fae] to-[#412e8f] opacity-90 bg-cover bg-center bg-no-repeat flex flex-col md:flex-row items-center justify-center'>
                     <div class="avatar">
                         <div class="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
