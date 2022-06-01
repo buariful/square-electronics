@@ -12,13 +12,13 @@ const SingleOrder = (props) => {
 
     const deleteOrder = (props) => {
 
-        console.log(props)
-        fetch(`https://fast-wildwood-48661.herokuapp.com/myorders/${props}`, {
+
+        fetch(`http://localhost:5000/myorders/${props}`, {
             method: 'DELETE',
             headers: {
                 'content-tye': 'appliation/json'
             },
-            body: JSON.stringify(props)
+            body: JSON.stringify(props.product)
         })
             .then(res => res.json())
             .then(data => console.log(data))
