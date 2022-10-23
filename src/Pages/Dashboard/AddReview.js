@@ -17,7 +17,7 @@ const AddReview = () => {
             text: reviews
         }
 
-        fetch('https://fast-wildwood-48661.herokuapp.com/reviews', {
+        fetch('https://square-electronics-server.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

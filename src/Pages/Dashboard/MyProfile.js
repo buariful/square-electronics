@@ -11,7 +11,7 @@ const MyProfile = () => {
     const [mydata, setMyData] = useState({});
 
     const { isLoading, data } = useQuery('repoDaata', () =>
-        fetch('https://fast-wildwood-48661.herokuapp.com/users').then(res =>
+        fetch('https://square-electronics-server.onrender.com/users').then(res =>
             res.json()
         )
     )
@@ -35,7 +35,7 @@ const MyProfile = () => {
             userLinkedInProfile: event.target.linkedin.value ? event.target.linkedin.value : myInfo.userLinkedInProfile,
         }
 
-        fetch(`https://fast-wildwood-48661.herokuapp.com/users/${user.email}`, {
+        fetch(`https://square-electronics-server.onrender.com/users/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

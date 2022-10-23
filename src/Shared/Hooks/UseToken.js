@@ -4,10 +4,10 @@ const UseToken = (user) => {
     const [token, setToken] = useState()
     useEffect(() => {
         const email = user?.user?.email;
-        const userInfo = { userEmail: email }
 
         if (email) {
-            fetch(`https://fast-wildwood-48661.herokuapp.com/users/${email}`, {
+            const userInfo = { userEmail: email };
+            fetch(`https://square-electronics-server.onrender.com/users/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

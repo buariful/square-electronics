@@ -4,7 +4,7 @@ import SingleProducts from './SingleProducts';
 const Products = () => {
     const [products, setProducts] = useState()
     useEffect(() => {
-        fetch('https://fast-wildwood-48661.herokuapp.com/products')
+        fetch('https://square-electronics-server.onrender.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

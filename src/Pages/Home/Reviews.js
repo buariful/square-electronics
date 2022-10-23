@@ -7,7 +7,7 @@ const Reviews = () => {
     const [reviewsData, setReviewsData] = useState();
 
     useEffect(() => {
-        fetch('https://fast-wildwood-48661.herokuapp.com/reviews', {
+        fetch('https://square-electronics-server.onrender.com/reviews', {
             method: "GET",
             headers: {
                 'authoriztion': `Bearar ${localStorage.getItem('accessToken')}`
@@ -20,7 +20,7 @@ const Reviews = () => {
 
     // const { isLoading, data } = useQuery('repoDaata', () =>
 
-    // fetch('https://fast-wildwood-48661.herokuapp.com/reviews').then(res =>
+    // fetch('https://square-electronics-server.onrender.com/reviews').then(res =>
     //         res.json()
     //     )
     // )

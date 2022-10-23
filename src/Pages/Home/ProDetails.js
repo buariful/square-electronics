@@ -28,7 +28,7 @@ const ProDetails = () => {
 
     const productId = props.id;
     const { isLoading, data } = useQuery('repoData', () =>
-        fetch('https://fast-wildwood-48661.herokuapp.com/products').then(res =>
+        fetch('https://square-electronics-server.onrender.com/products').then(res =>
             res.json()
         )
     )
@@ -88,7 +88,7 @@ const ProDetails = () => {
         }
         toast.success('Success! Go to dashboard for payment')
 
-        fetch('https://fast-wildwood-48661.herokuapp.com/orders', {
+        fetch('https://square-electronics-server.onrender.com/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -110,7 +110,7 @@ const ProDetails = () => {
             shortDescription: product.shortDescription,
 
         }
-        fetch(`https://fast-wildwood-48661.herokuapp.com/updateproducts/${productId}`, {
+        fetch(`https://square-electronics-server.onrender.com/updateproducts/${productId}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
